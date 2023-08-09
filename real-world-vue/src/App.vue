@@ -10,14 +10,12 @@ const { message } = storeToRefs(store)
 
 <template>
   <header class="max-h-screen leading-normal">
-    <div id="flashMessage" v-if="message">
-      <h4>{{message}}</h4>
+    <div id="flashMessage" v-if="message" class="animate-yellowfade">
+      <h4 class="text-lg">{{ message }}</h4>
     </div>
-      <nav>
-        <RouterLink :to="{ name: 'event-list'}"> Home </RouterLink>
-        <RouterLink :to="{ name: 'event-list2'}"> Home2 </RouterLink>
-        <RouterLink :to="{ name: 'student-list'}"> Student </RouterLink>
-        <RouterLink :to="{ name: 'about'}"> About </RouterLink>
+    <nav class="p-8">
+      <RouterLink :to="{ name: 'event-list' }" class="font-bold text-gray-700 hover:text-green-500">Home</RouterLink>
+      <RouterLink :to="{ name: 'about' }" class="font-bold text-gray-700 hover:text-green-500">About</RouterLink>
       </nav>
   </header>
 
@@ -68,7 +66,7 @@ h4 {
     background: transparent;
   }
 }
-#flashMessage {
+.animate-yellowfade {
   animation: yellowfade 3s ease-in-out;
 }
 
